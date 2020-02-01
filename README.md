@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+Worthy - Free Bootstrap Template
+=======================================================================
 
-You can use the [editor on GitHub](https://github.com/shishixuezi/shishixuezi.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Worhty is a Multipurpose One Page Template based on Bootstrap 3 Framework. 
+You can use it for corporate, business and agency webpages as well as 
+portfolio and personal webpages.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+If you like the template and find it useful, please help us spread the word :-)
 
-### Markdown
+- Theme version: v1.0
+- Release Date: 13 Nov 2014
+- Author: HtmlCoder (http://htmlcoder.me)
+- Contact: http://htmlcoder.me/contact
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Live Preview
+=======================================================================
+http://www.htmlcoder.me/preview/worthy/v.1.0
 
-```markdown
-Syntax highlighted code block
+License
+=======================================================================
+Worthy is released under the Creative Commons Attribution 3.0 License
+https://creativecommons.org/licenses/by/3.0/
 
-# Header 1
-## Header 2
-### Header 3
+Credits
+=======================================================================
 
-- Bulleted
-- List
+Demo images
+------------------------------------------------------
+- Unsplash by Crew - http://unsplash.com/
 
-1. Numbered
-2. List
+Fonts
+------------------------------------------------------
+- Font Awesome by Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+- Google Fonts - http://www.google.com/fonts
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shishixuezi/shishixuezi.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Resources
+------------------------------------------------------
+- Bootstrap Framework by @mdo and @fat - http://getbootstrap.com/
+- jQuery - https://jquery.org/
+- jQuery Appear - by bas2k - https://github.com/bas2k/jquery.appear/
+- Modernizr - http://modernizr.com/
+- Animate CSS by Daniel T. Eden - http://daneden.github.io/animate.css/
+- Isotope Jquery plugin by metafizzy.co - http://isotope.metafizzy.co/
+- Backstrech by Scott Robbin - http://srobbin.com/jquery-plugins/backstretch/
