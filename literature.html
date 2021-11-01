@@ -64,21 +64,19 @@
             <div class="col-9">
                 <p class="fs-3 fw-normal"> Transfer Urban Human Mobility via POI Embedding over Multiple Cities </p>
                 <p class="fw-light lh-1"> ACM/IMS Transactions on Data Science, December 2020</p>
-                <span class="badge bg-info text-dark">embedding</span>
-                <span class="badge bg-primary">reconstruction</span>
-                <span class="badge bg-secondary">Secondary</span>
-                <span class="badge bg-success">Success</span>
-                <span class="badge bg-danger">Danger</span>
-                <span class="badge bg-warning text-dark">Warning</span>
-                <span class="badge bg-info text-dark">Info</span>
-                <span class="badge bg-light text-dark">Light</span>
-                <span class="badge bg-dark">Dark</span>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-primary">POIs</span>
+                <span class="badge bg-secondary">CNN</span>
+                <span class="badge bg-success">Trajectoy</span>
 
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
                     Fusing GPS trajectories data and POI data, the paper proposed image-like embedding with POIs to represent a trajectory like an artificial video, along with transfer learning to exploit data from other cities.
                     It also designed an LSTM-on-CNNs architecture to capture both spatio-temporal and geographical information from citywide human mobility.
+                    The interesting point of this paper is the analogy of trajectories to images. 
+                    Categories are seen as different channels of images, while agent positions at different times are seen as clips of the videos. 
+                    Thus, they use CNN to capture local features.
                 </p>
             </div>
         </div>
@@ -87,23 +85,100 @@
 
         <div class="row py-5 justify-content-center">
             <div class="col-9">
-                <p class="fs-3 fw-normal"> Transfer Urban Human Mobility via POI Embedding over Multiple Cities </p>
-                <p class="fw-light lh-1"> ACM/IMS Transactions on Data Science, December 2020</p>
-                <span class="badge bg-info text-dark">embedding</span>
-                <span class="badge bg-primary">reconstruction</span>
-                <span class="badge bg-secondary">Secondary</span>
-                <span class="badge bg-success">Success</span>
-                <span class="badge bg-danger">Danger</span>
-                <span class="badge bg-warning text-dark">Warning</span>
-                <span class="badge bg-info text-dark">Info</span>
-                <span class="badge bg-light text-dark">Light</span>
-                <span class="badge bg-dark">Dark</span>
+                <p class="fs-3 fw-normal"> Competitive Analysis for Points of Interest </p>
+                <p class="fw-light lh-1"> ACM SIGKDD 2020</p>
+                <span class="badge bg-primary">POIs</span>
+                <span class="badge bg-danger">GNN</span>
+                <span class="badge bg-warning text-dark">Multimodal</span>
 
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    Fusing GPS trajectories data and POI data, the paper proposed image-like embedding with POIs to represent a trajectory like an artificial video, along with transfer learning to exploit data from other cities.
-                    It also designed an LSTM-on-CNNs architecture to capture both spatio-temporal and geographical information from citywide human mobility.
+                    The target of this paper is to develop competitive relationship of POIs, which is interesting.
+                    They build a heterogeneous POI information network from POI reviews and map search data.
+                    Besides, they propose a graph neural network learning framework, including a spatial adaptive GNN and a POI pairwise knowledge extraction learning model.
+                    The interesting point of the paper is usage of multinomial data, including reviews, search histories and spatial relationship of POIs.
+                    How they convert POIs into graph structure is also a good point to delineate complicated structures. 
+                    Moreover, for combination of different factors, they use attention mechanics considering importance of factors. 
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> CityCoupling: Bridging Intercity Human Mobility </p>
+                <p class="fw-light lh-1"> Ubicomp 2016</p>
+                <span class="badge bg-dark">Transfer Learning</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper utilizes an expectation-maximation (EM) algorithm to estimate intercity spatial mapping and a Gibbs sampling multiple hidden Markov model to generate simulated trajectories.
+                    To evaluate the result, the paper compares the case in Tokyo and Osaka under regular time and rare events like earthquake and new year eve. 
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> A Non-Parametric Generative Model for Human Trajectories </p>
+                <p class="fw-light lh-1"> IJCAI 2018</p>
+                <span class="badge bg-success">Trajectoy</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper proposes a non-sequential non-parametric generative model to capture high-order geographic and semantic features of human mobility. 
+                    It uses the matrix to represent one discretized location and each cell contains information about the time and duration of visiting that cell in the given trajectory. 
+                    The third dimension of the matrix (tensor) is the repeated times of visiting the same location. 
+                    Moreover, the paper uses four geographical statistics and JS-divergence to evaluate the results. 
+                    Absolute semantics and relative semantics are also considered in the analysis.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> DeepMove: Predicting Human Mobility with Attentional Recurrent Networks </p>
+                <p class="fw-light lh-1"> WWW 2018</p>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-success">Trajectoy</span>
+                <span class="badge bg-warning text-dark">Multimodal</span>
+                <span class="badge bg-info text-dark">RNN</span>
+                <span class="badge bg-light text-dark">Attention</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper proposes DeepMove, a multi-modal embedding recurrent neural network for capturing multiple factors that govern the transition regularities of human mobility and uses a historical attention module for modeling the multi-level periodicity of human mobility.
+                    For the second part, they design two attention mechanisms to cooperate with the recurrent module. 
+                    The first is to embed historical record into independent latent vectors directly, while the second preserves the sequential information among historical records.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Fine-Grained Urban Flow Prediction </p>
+                <p class="fw-light lh-1"> WWW 2021</p>
+                <span class="badge bg-warning text-dark">Multimodal</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper uses fine-grained data (150m\times150m) to get the prediction of human mobility. 
+                    It proposes a Spatio-Temporal Relation Network to learn high-level representations for each cell. 
+                    Moreover, it presents a Global Relation Module to capture global spatial dependencies using regions instead of meshes to improve efficiency. 
+                    Last but not the least, a Meta Learner is used to consider external factors and land functions. 
+                    The result shows that it can reduce the error as well as using much fewer parameters to boost the performance.
                 </p>
             </div>
         </div>
