@@ -128,12 +128,13 @@
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The paper utilizes an expectation-maximation (EM) algorithm to estimate intercity spatial mapping and a Gibbs sampling multiple hidden Markov model to generate simulated trajectories.
-                    To evaluate the result, the paper compares the case in Tokyo and Osaka under regular time and rare events like earthquake and new year eve. 
+                    The paper utilizes an expectation-maximation (EM) algorithm to estimate intercity spatial mapping. 
+                    The intercity trajectory matching is seen as latent variables and the intercity spatial mapping as the parameters. 
+                    Then, a Gibbs sampling multiple hidden Markov model utilizes the Viterbi algorithm to generate simulated trajectories using the generated spatial mapping. 
                 </p>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    In my opinion, simply matching trajectories and estimating optimal parameters can be computationally expensive and difficult to converge. 
+                    In my opinion, even though the idea of not using any prior knowledge is fascinating, simply matching trajectories and estimating optimal parameters can be computationally expensive and difficult to converge. 
                     And this process may neglect underlying patterns.
                 </p>
             </div>
