@@ -66,17 +66,23 @@
                 <p class="fw-light lh-1"> ACM/IMS Transactions on Data Science, December 2020</p>
                 <span class="badge bg-info text-dark">Embedding</span>
                 <span class="badge bg-primary">POIs</span>
-                <span class="badge bg-secondary">CNN</span>
-                <span class="badge bg-success">Trajectoy</span>
+                <span class="badge bg-secondary">LSTM and CNN</span>
+                <span class="badge bg-success">Trajectory Prediction</span>
 
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    Fusing GPS trajectories data and POI data, the paper proposed image-like embedding with POIs to represent a trajectory like an artificial video, along with transfer learning to exploit data from other cities.
-                    It also designed an LSTM-on-CNNs architecture to capture both spatio-temporal and geographical information from citywide human mobility.
-                    The interesting point of this paper is the analogy of trajectories to images. 
-                    Categories are seen as different channels of images, while agent positions at different times are seen as clips of the videos. 
-                    Thus, they use CNN to capture local features.
+                    The basic task is to predict the next position given a trajectory sequence (prediction task).
+                    Fusing GPS and POI data, the paper proposed image-like embedding of POIs to represent a trajectory like an artificial video.
+                    This enables transfer learning to exploit other cities with limited observation data. 
+                    An LSTM-on-CNNs architecture is designed to capture both spatio-temporal and geographical information.
+                </p>
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    One tricky and interesting point for me is the construction of POI-image. 
+                    Different POI categories serve as different channels, while the value of a pixel is the number of POI of one category in one mesh (It means that all pixel values will not change along the time). 
+                    Trajectories are used as capture frame (location meshes + window meshes) to generate the video clips. 
+                    The main intuition is to mine sequential relationships of POIs.
+                    One potential problem in my opinion is the inefficient use of the expensive trajectory data.
                 </p>
             </div>
         </div>
@@ -85,21 +91,27 @@
 
         <div class="row py-5 justify-content-center">
             <div class="col-9">
-                <p class="fs-3 fw-normal"> Competitive Analysis for Points of Interest </p>
-                <p class="fw-light lh-1"> ACM SIGKDD 2020</p>
-                <span class="badge bg-primary">POIs</span>
-                <span class="badge bg-danger">GNN</span>
-                <span class="badge bg-warning text-dark">Multimodal</span>
+                <p class="fs-3 fw-normal"> City2City: Translating Place Representations across Cities </p>
+                <p class="fw-light lh-1"> ACM SIGSPATIAL 2019</p>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-secondary">LSTM</span>
+                <span class="badge bg-dark">Transfer Learning</span>
+                <span class="badge bg-success">Trajectory Prediction</span>
 
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The target of this paper is to develop competitive relationship of POIs, which is interesting.
-                    They build a heterogeneous POI information network from POI reviews and map search data.
-                    Besides, they propose a graph neural network learning framework, including a spatial adaptive GNN and a POI pairwise knowledge extraction learning model.
-                    The interesting point of the paper is usage of multinomial data, including reviews, search histories and spatial relationship of POIs.
-                    How they convert POIs into graph structure is also a good point to delineate complicated structures. 
-                    Moreover, for combination of different factors, they use attention mechanics considering importance of factors. 
+                    The background is location prediction task given trajectory history in this paper. 
+                    The place representation matrix is obtained from an LSTM-RNN using stay point sequences generated from GPS data. 
+                    All three proposed models are based on this representation. 
+                    The most preferred model is to train a transformation function to map representation in the common vector space. 
+                    The author also develops another two models for comparison. 
+                    One is simply merging mobility data from two cities and training representation together. 
+                    Another is to train the adversarial model.
+                </p>
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    Due to the unsupervised learning setting, the paper uses the top-N visited place pairs to train the mapping function, which may be problematic in my opinion. 
+                    Moreover, the representation matrix deal with embeddings of stay points, which may be expensive and difficult to learn an accurate mapping function.
                 </p>
             </div>
         </div>
@@ -111,8 +123,14 @@
                 <p class="fs-3 fw-normal"> CityCoupling: Bridging Intercity Human Mobility </p>
                 <p class="fw-light lh-1"> Ubicomp 2016</p>
                 <span class="badge bg-dark">Transfer Learning</span>
+                <span class="badge bg-success">Irregular Trajectory Prediction</span>
 
                 <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper utilizes an expectation-maximation (EM) algorithm to estimate intercity spatial mapping and a Gibbs sampling multiple hidden Markov model to generate simulated trajectories.
+                    To evaluate the result, the paper compares the case in Tokyo and Osaka under regular time and rare events like earthquake and new year eve. 
+                </p>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
                     The paper utilizes an expectation-maximation (EM) algorithm to estimate intercity spatial mapping and a Gibbs sampling multiple hidden Markov model to generate simulated trajectories.
@@ -127,7 +145,7 @@
             <div class="col-9">
                 <p class="fs-3 fw-normal"> A Non-Parametric Generative Model for Human Trajectories </p>
                 <p class="fw-light lh-1"> IJCAI 2018</p>
-                <span class="badge bg-success">Trajectoy</span>
+                <span class="badge bg-success">Trajectory Prediction</span>
 
                 <br></br>
 
@@ -148,10 +166,9 @@
                 <p class="fs-3 fw-normal"> DeepMove: Predicting Human Mobility with Attentional Recurrent Networks </p>
                 <p class="fw-light lh-1"> WWW 2018</p>
                 <span class="badge bg-info text-dark">Embedding</span>
-                <span class="badge bg-success">Trajectoy</span>
+                <span class="badge bg-success">Trajectory Prediction</span>
                 <span class="badge bg-warning text-dark">Multimodal</span>
-                <span class="badge bg-info text-dark">RNN</span>
-                <span class="badge bg-light text-dark">Attention</span>
+                <span class="badge bg-secondary">RNN and Attention</span>
 
                 <br></br>
 
@@ -174,7 +191,7 @@
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The paper uses fine-grained data (150m\times150m) to get the prediction of human mobility. 
+                    The paper uses fine-grained data (150m × 150m) to get the prediction of human mobility. 
                     It proposes a Spatio-Temporal Relation Network to learn high-level representations for each cell. 
                     Moreover, it presents a Global Relation Module to capture global spatial dependencies using regions instead of meshes to improve efficiency. 
                     Last but not the least, a Meta Learner is used to consider external factors and land functions. 
@@ -185,9 +202,57 @@
     
         <hr style="width: 75%;">
 
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Spatio-Temporal Graph Convolutional Networks: A Deep Learning Framework for Traffic Forecasting </p>
+                <p class="fw-light lh-1"> IJCAI 2018</p>
+                <span class="badge bg-secondary">Graph and Convolution</span>
+                <span class="badge bg-success">Traffic Prediction</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper uses graphs for traffic forecast and purely uses convolutional networks (c.f. convolutional NEURAL network) to build the model. 
+                    The spatial features are attained by convoluting on graph structure data, while the temporal features are gathered by applying 1-D convolution layer along the time axis. 
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Competitive Analysis for Points of Interest </p>
+                <p class="fw-light lh-1"> ACM SIGKDD 2020</p>
+                <span class="badge bg-primary">POIs</span>
+                <span class="badge bg-secondary">GNN</span>
+                <span class="badge bg-warning text-dark">Multimodal</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The target of this paper is to develop competitive relationship of POIs, which is interesting.
+                    They build a heterogeneous POI information network from POI reviews and map search data.
+                    Besides, they propose a graph neural network learning framework, including a spatial adaptive GNN and a POI pairwise knowledge extraction learning model.
+                    The interesting point of the paper is usage of multinomial data, including reviews, search histories and spatial relationship of POIs.
+                    How they convert POIs into graph structure is also a good point to delineate complicated structures. 
+                    Moreover, for combination of different factors, they use attention mechanics considering importance of factors. 
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-1 justify-content-center">
+            <div class="col-9">
+                <figure class="text-end">
+                      <p class="fw-light lh-1">Last update: December 1, 2021</p>
+                </figure>
+            </div>
+        </div>
+
+
     </div>
-
-
 
 
     <footer class="mt-5 text-white-50 text-center">
