@@ -179,9 +179,19 @@
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The paper proposes DeepMove, a multi-modal embedding recurrent neural network for capturing multiple factors that govern the transition regularities of human mobility and uses a historical attention module for modeling the multi-level periodicity of human mobility.
-                    For the second part, they design two attention mechanisms to cooperate with the recurrent module. 
-                    The first is to embed historical record into independent latent vectors directly, while the second preserves the sequential information among historical records.
+                    The task of human mobility is the prediction task. 
+                    The paper constructs multimodal embeddings for current and historical trajectories. 
+                    Then the embeddings are fed into a Recurrent Neural Network. 
+                    A historical attention module between historical and current trajectories is used to capture multilevel periodicity. 
+                    The paper proposes two different attention candidate generators: one is to directly embed records into independent latent vectors and sample for candidates, while another is to sequentially encode and take intermediate outputs as candidates. 
+                    The workflow of architecture dealing with sequential data is typical. One interesting point is that the paper examines the attention matrix to explain the effectives. 
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    However, in my opinion, the explanation is shallow since it only focuses on the maximum weight to prove it. 
+                    More elaborations are needed in this part. 
+                    Moreover, even though the author uses multimodal embeddings, the multimodal information is just location, user ID and time, which may not be so powerful. 
+                    And conversion from one-hot vectors to dense vectors may be unable to capture complicated features.                   
                 </p>
             </div>
         </div>
@@ -276,7 +286,7 @@
         <div class="row py-1 justify-content-center">
             <div class="col-9">
                 <figure class="text-end">
-                      <p class="fw-light lh-1">Last update: December 1, 2021</p>
+                      <p class="fw-light lh-1">Last update: December 2, 2021</p>
                 </figure>
             </div>
         </div>
