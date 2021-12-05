@@ -261,15 +261,24 @@
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The target of this paper is to develop competitive relationship of POIs.
-                    They build a heterogeneous POI information network from POI reviews and map search data.
-                    Besides, they propose a graph neural network learning framework, including a spatial adaptive GNN and a POI pairwise knowledge extraction learning model.
+                    The target is to study competitive relationships of POIs. 
+                    The author summarizes POIs and construct graphs (which means generation of edges between POIs) in two aspects. 
+                    First is the spatial relationship through heat maps. 
+                    Second is the aspect relationship extracted from reviews and search histories. 
                 </p>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The interesting point of the paper is usage of multinomial data, including reviews, search histories and spatial relationship of POIs.
-                    How they convert POIs into graph structure is also a good point to delineate complicated structures. 
-                    Moreover, for combination of different factors, they use attention mechanics considering importance of factors. 
+                    Then these two graphs are fed into the network to predict competitive relationships through spatial and knowledge sides. 
+                    For the spatial side, to consider two spatial factors, different location sectors and distance, the paper designs different convolution layers for different sectors and an attentive propagation layer by assigning distance into different buckets. 
+                    Moreover, the competitive and compensative graphs are operated separately and concatenated in the end. 
+                    For the knowledge side, the brand and aspect embeddings are learned using specific aggregation functions. 
+                    Brands and Aspects are interacted by cross attention.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The interesting point of the paper is usage of multinomial data, including reviews, search histories and spatial relationship of POIs. 
+                    How they convert POIs into graph structure is also a good point to consider different factors hierarchically. 
+                    Even though the paper is not about mobility using POI information, it is a good hint for delineation of POI interactions.
                 </p>
             </div>
         </div>
