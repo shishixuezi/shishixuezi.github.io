@@ -202,17 +202,31 @@
             <div class="col-9">
                 <p class="fs-3 fw-normal"> Fine-Grained Urban Flow Prediction </p>
                 <p class="fw-light lh-1"> WWW 2021</p>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-primary">POIs</span>
+                <span class="badge bg-secondary">CNN and GCN</span>
+                <span class="badge bg-success">Flow Prediction</span>
                 <span class="badge bg-warning text-dark">Multimodal</span>
+
 
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The paper uses fine-grained data (150m × 150m) to get the prediction of human mobility. 
-                    It proposes a Spatio-Temporal Relation Network to learn high-level representations for each cell. 
-                    Moreover, it presents a Global Relation Module to capture global spatial dependencies using regions instead of meshes to improve efficiency. 
-                    Last but not the least, a Meta Learner is used to consider external factors and land functions. 
-                    The result shows that it can reduce the error as well as using much fewer parameters to boost the performance.
+                    The task of the paper is the prediction of urban flow based on historical data. 
+                    The resolution is high (The grid size is ~150m), which is called as fine-grained. 
+                    The author selects key timesteps as closeness, period and trend (recent, daily and weekly) to create different layers of the flow inputs, and uses non-shared convolutional layer to process them. 
+                    The external factors (like weather and time) and POI information are processed by the meta learner. 
+                    All four layers are concatenated and fed into a network to get high-dimensional embeddings for each grid. 
+                    To reduce the parameters due to the fine-grained settings, the author develops region partition and uses a Graph Neural Network to consider global spatial dependencies and make predictions.
                 </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    In all, it is a very good paper for the comprehensive use of mobility data and the consideration of the external factors as embeddings. 
+                    The paper gives a very clear description of the architecture. 
+                    One of problem in my opinion is the usage of fine-grained data, as it is expensive and easy to violate privacy. 
+                    Moreover, the setting of GCN may be not convincing because the complete graph may not describe the actual connections between different regions.                  
+                </p>
+
             </div>
         </div>
     
@@ -286,7 +300,7 @@
         <div class="row py-1 justify-content-center">
             <div class="col-9">
                 <figure class="text-end">
-                      <p class="fw-light lh-1">Last update: December 2, 2021</p>
+                      <p class="fw-light lh-1">Last updated: December 5, 2021</p>
                 </figure>
             </div>
         </div>
