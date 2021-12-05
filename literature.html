@@ -242,9 +242,20 @@
                 <br></br>
 
                 <p class="text-body fw-light lh-3" style="text-align: justify">
-                    The paper uses graphs for traffic forecast and purely uses convolutional networks (c.f. convolutional NEURAL network) to build the model. 
+                    This work focuses on the traffic prediction (attributes of the traffic flow like velocity). 
+                    The paper constructs graphs directly based on connectivity of observation stations. 
+                    An approximation is applied for layer-wise linear structure to reduce parameters. 
+                    The author purely uses convolutional networks to build the model. 
                     The spatial features are attained by convoluting on graph structure data, while the temporal features are gathered by applying 1-D convolution layer along the time axis. 
+                    The spatial and temporal layers are jointly process using “sandwich” structure.
                 </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper develops a general approach to process Spatio-temporal sequences. 
+                    The math part of approximation is a little bit difficult for me. 
+                    And the mining of graph structure a little bit too simple, as the author mainly focuses on balancing spatial and temporal layers.
+                </p>
+
             </div>
         </div>
     
@@ -254,6 +265,7 @@
             <div class="col-9">
                 <p class="fs-3 fw-normal"> Competitive Analysis for Points of Interest </p>
                 <p class="fw-light lh-1"> ACM SIGKDD 2020</p>
+                <span class="badge bg-info text-dark">Embedding</span>
                 <span class="badge bg-primary">POIs</span>
                 <span class="badge bg-secondary">GNN</span>
                 <span class="badge bg-warning text-dark">Multimodal</span>
