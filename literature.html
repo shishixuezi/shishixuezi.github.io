@@ -294,6 +294,43 @@
                 </p>
             </div>
         </div>
+
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Learning to Simulate Human Mobility </p>
+                <p class="fw-light lh-1"> ACM SIGKDD 2020</p>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-secondary">GAN, CNN and Attention</span>
+                <span class="badge bg-success">Trajectory Simulation</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper introduces a model-free generative adversarial framework to simulate human mobility. 
+                    For the generator, it embeds time and location from one hot vector. 
+                    Then it projects the dense representation vector into three vectors to enable self-attention. 
+                    Three region-based matrices using physical distance, function similarity and historical transition are used to deal with intermediate output to select information. 
+                    This information adds the intermediate vector and serves as the final result, just like the residual connection. 
+                    Discriminator is convolution-neural-network based. 
+                    It converts the trajectory to the 2D feature matrix and convolutes over the matrix. 
+                    Besides, it uses the last version of generator as the assistant to complete the partial trajectory. 
+                    The loss function cares the distance and regularity. As a result, the travel distance between transition is limited, and same visited locations at the same time are encouraged. 
+                    The author also pretrains the model. 
+                    Next location prediction is used to pretrain the generator, and the binary classification task whether trajectories exhibit regularities is used to pretrain the discriminator.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper balances the model-based and model-free methodology. 
+                    It is of great importance to achieve the performance and explanation of model at the same time. 
+                    For the mobility patterns, the paper considers the distance, POI distribution, transition and regularities, which may not be comprehensive to explain complicated patterns. 
+                    The essential time factors (which mean the absolute time the activities happen) are also neglected. 
+                    Unfortunately, the code has not been released. even though they said they would do two years ago.              
+                </p>
+
+            </div>
+        </div>
     
         <hr style="width: 75%;">
 
@@ -321,7 +358,7 @@
         <div class="row py-1 justify-content-center">
             <div class="col-9">
                 <figure class="text-end">
-                      <p class="fw-light lh-1">Last updated: December 5, 2021</p>
+                      <p class="fw-light lh-1">Last updated: December 30, 2021 (+1)</p>
                 </figure>
             </div>
         </div>
