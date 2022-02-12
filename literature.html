@@ -336,6 +336,63 @@
 
         <div class="row py-5 justify-content-center">
             <div class="col-9">
+                <p class="fs-3 fw-normal"> A Review of Location Encoding for GeoAI: Methods and Applications </p>
+                <p class="fw-light lh-1"> International Journal of Geographical Information Science, 2022</p>
+                <span class="badge bg-danger">Review</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper reviews the location encoding, which is useful for many downstream tasks. 
+                    Different encoding methods have different properties, such as distance preserving, direction aware, multi-scale, and parametric or not. 
+                    The choice of encoding needs to consider tradeoff between bias (restricted hypothesis space) and variance (flexible and large hypothesis space). 
+                    Based on different input data, encoders have different properties. 
+                    The paper mainly reviews single point location encoders receive point coordinates and diversify in whether consider neighbors or not in the space. 
+                    It also briefly introduces encoders for polyline, polygon and raster data.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    In my opinion, even though the distance and direction are intuitive properties the location encoders should maintain, 
+                    there is doubt that whether it is necessary as other factors such as high-speed transportation may reduce the influence of distance. 
+                    However, there is no denying that the location encoders need to be unified under the same framework to enable the interpretability and transfer learning.
+                </p>
+            </div>
+        </div>
+
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> A Survey on Deep Learning for Human Mobility </p>
+                <p class="fw-light lh-1"> ACM Computing Surveys, 2021</p>
+                <span class="badge bg-danger">Review</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper divides mobility tasks into next-location/flow predictions and flow/trajectory generations. 
+                    It defines the different problems, lists related datasets as well as evaluation metrics and summarizes diversified deep learning architecture from various papers. 
+                    The paper states key points of different settings. 
+                    For next-location predictions and trajectory predictions, which are both for agent-level, 
+                    the individual spatial and temporal patterns, including regular and irregular mobility, 
+                    the external factors and user preferences need to be maintained. 
+                    For crowd flow prediction, spatial patterns including influence of near-by and distant areas, 
+                    temporal patterns including periodic, trends, recent ones (defined by different period lengths) and external factors need to be considered. 
+                    However, for flow generation, only spatial patterns and geographic characteristics (similar to user preference on individual level) are needed. 
+                    In the end, the paper also concludes challenges for human mobility problems, 
+                    which are geographic transferability, explainability, privacy, tunability and consideration of interactions.</p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    This review paper clarifies the definition of human mobility problems and key points for the solutions, which is of great significance. 
+                    It also throws light on the difficulties that future research needs to overcome, with which I completely agree.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
                 <p class="fs-3 fw-normal"> Urban Computing: Concepts, Methodologies, and Applications </p>
                 <p class="fw-light lh-1"> ACM TIST 2014</p>
                 <span class="badge bg-danger">Review</span>
@@ -352,13 +409,13 @@
                 </p>
             </div>
         </div>
-    
+
         <hr style="width: 75%;">
 
         <div class="row py-1 justify-content-center">
             <div class="col-9">
                 <figure class="text-end">
-                      <p class="fw-light lh-1">Last updated: December 30, 2021 (+1)</p>
+                      <p class="fw-light lh-1">Last updated: February 12, 2022</p>
                 </figure>
             </div>
         </div>
@@ -385,7 +442,7 @@
             </p>
         </span>
         <span class="text-muted py-3">       
-            <p class="small"> Copyright © 2021 Mingfei Cai. All Rights Reserved.</p>
+            <p class="small"> Copyright © 2022 Mingfei Cai. All Rights Reserved.</p>
         </span>
     </footer>
 </div>
