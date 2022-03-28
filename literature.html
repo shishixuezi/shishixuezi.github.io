@@ -412,10 +412,168 @@
 
         <hr style="width: 75%;">
 
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Graph WaveNet for Deep Spatial-Temporal Graph Modeling </p>
+                <p class="fw-light lh-1"> IJCAI 2019</p>
+                <span class="badge bg-secondary">CNN and GCN</span>
+                <span class="badge bg-success">Flow Prediction</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper proposes a graph convolution layer with a self-adaptive adjacency matrix. 
+                    The output comes from three parts: the forward and backward (for directed graphs) diffusion process of graph signals and the one from the self-adaptive adjacency matrix. 
+                    This matrix is calculated by multiplying source and target embeddings with ReLU activation and SoftMax normalization. 
+                    Apart from that, it also adopts stacked dilated casual convolutions to capture long temporal dependencies, which is called as temporal convolution layer. 
+                    The key is the exponentially growing receptive field.
+                    This part is also gated to control the information flow. 
+                    Overall, the training purpose is the minimization of mean absolute error.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The self-adaptive matrix is impressive, which unifies the solution of problems with and without graph structures. 
+                    It also solves the constraint of application of graph convolution network on dynamic graphs (as it needs the adjacency matrix). 
+                    Nevertheless, I think the sum of three parts may not be able to summarize the correct answer. 
+                    The weighted sum may be a better choice.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Representing Urban Functions through Zone Embedding with Human Mobility Patterns </p>
+                <p class="fw-light lh-1"> IJCAI 2018</p>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-success">Land Use Prediction</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    Inspired by word2vec, the paper constructs zone embeddings from co-occurrences origin-destination zone, which are extracted from taxi trajectories. 
+                    The writer uses the zone as a word and the corresponding departed/arrived zone-time event pair as the context. 
+                    Moreover, the paper uses travel demand calculated from two factors, total arrival at destination zones and travel distance with the gravity model of transportation analysis, to assign weekday/weekend importance. 
+                    The goal of the model is to minimize the importance-weighted difference between positive point-wise mutual information of co-occurrence and embedding decoded results. 
+                    Regarding the evaluation, the paper utilizes k-means clustering to partition zone-set into urban function clusters. 
+                    The prediction uses the proposed embedding vectors, while the validation employs vectors of percentage for different land use types in different zones. 
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The construction of co-occurrence pair is interesting. 
+                    Division of the origin and destination to the event of one zone enables inclusion of timestamp and direction. 
+                    The import of travel demand weight can make the embedding consider traffic-related factors. 
+                    The usage of k-means cluster in evaluation part is also a brilliant idea to test embeddings. 
+                    However, it might be not effective sometimes, as the percentage may not elucidate the actual function of one zone. 
+                    In addition, some zone may have several functions with different importance, so the clustering will neglect other function with minor importance, rendering the result not comprehensive.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Improving Land Use Classification using Human Mobility-based Hierarchical Place Embeddings </p>
+                <p class="fw-light lh-1"> PerCom 2021</p>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-secondary">RNN</span>
+                <span class="badge bg-success">Trajectory Prediction</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    As the data sparsity may deteriorate the performance of location embeddings, the paper makes use of spatial hierarchical information. 
+                    They use the LSTM-based RNN for next place prediction tasks and get the by-product embeddings for locations, which is in the region form. 
+                    The main contribution is to design the dimension of the embedding and divide different dimensions to different size regions hierarchically. 
+                    Finally, the paper uses the land use dataset for a prediction task to test the performance.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    In my opinion, hierarchical spatial embedding is an interesting idea, as we can generate embedding for different levels at one time. 
+                    The discussion of the dimension division is also valuable. 
+                    However, the model structure is just a normal RNN and nothing special is done for embedding generation, which may lead to the confusion about the effectiveness. 
+                    Also, the simple and direct division of the embedding may be doubtful as the hierarchical information tend to be more complicated, not applicable in the simple space.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Location Embeddings for Next Trip Recommendation </p>
+                <p class="fw-light lh-1"> WWW 2019</p>
+                <span class="badge bg-info text-dark">Embedding</span>
+                <span class="badge bg-secondary">GCN and Recommendation System</span>
+                <span class="badge bg-success">Next Location Prediction</span>
+                <span class="badge bg-warning text-dark">Multimodal</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The task of the paper is to recommend cities for travelers, which can be seen as a binary classification task. 
+                    First, the model constructs knowledge graph and learns the representation of cities from Wikipedia (by TF-IDF weighted sum of word vectors) and location-based social network data (by TransE). 
+                    Then, the paper combines two existing recommender systems and learns user behaviors from their booking histories that also include personal profiles. 
+                    All parts above are combined as a deep component. 
+                    Another component is a feature factorization machines component with contextual information. 
+                    These two components are concatenated together to feed into a multilayer perceptron. 
+                    In the data preprocessing, they use a trained classifier to select leisure trips and only keep travels who have destinations over a threshold in their history.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The structure of the paper is elegant. 
+                    The writer implements several existing approaches to construct the model, so it may be necessary to read related papers to understand it. 
+                    This work is mainly related to the recommend system and the research level is city so that the contextual information is easy to collect. 
+                    However, for our human mobility problems, the resolution may not be enough and most information are not available.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> STUaNet: Understanding Uncertainty in Spatiotemporal Collective Human Mobility </p>
+                <p class="fw-light lh-1"> WWW 2021</p>
+                <span class="badge bg-info text-dark">Uncertainty</span>
+                <span class="badge bg-secondary">RNN, GCN and Recommendation System</span>
+                <span class="badge bg-success">Trajectory Prediction</span>
+                <span class="badge bg-warning text-dark">Multimodal</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    This paper focuses on variation for human mobility predictions and quantifies uncertainty of internal data quality and external contextual interactions. 
+                    The model includes two parts: human mobility prediction tasks and uncertainty learning tasks. 
+                    For one, mobility prediction is backboned by graph convolution module within an LSTM. 
+                    For next-interval predictions, the paper considers three scales: nearest intervals, same intervals in most recent days, average mobility intensity of the same intervals in each day of the last week. 
+                    They use gravity-based model to indicate transition patterns from urban mobility flow. 
+                    Another module uses the same input to quantify uncertainties for internal spatiotemporal dependencies and external context influence. 
+                    On the one hand, period-wise sequence similarities are computed to estimate data quality. 
+                    On the other hand, factorization machine (for contextual interactions) and graph convolution network(for spatial dependency) are used to compute external factors and learn mapping functions from different contextual factors to region-level uncertainty. 
+                    Moreover, the model actively injects controllable Gaussian noise for guidance, with two weak supervised indicators: data quality estimation results and variance. 
+                    In addition, a gated-based bridge is used to reduce learned uncertainty from predictions.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper offers a special perspective for human mobility predictions. 
+                    Uncertainty can make prediction results variate a lot under different data or settings. 
+                    Thus, it is essential to consider it. 
+                    The paper develops a seamless structure for both internal and external uncertainty estimations. 
+                    Nonetheless, all calculators are neural networks and uncertainty labels are results from neural estimators and statistical variation, which may be not powerful and sometimes difficult to find an accurate results. 
+                    More studies are needed for the ground-truth labels for uncertainty, in my opinion.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
         <div class="row py-1 justify-content-center">
             <div class="col-9">
                 <figure class="text-end">
-                      <p class="fw-light lh-1">Last updated: February 12, 2022</p>
+                      <p class="fw-light lh-1">Last updated: March 28, 2022</p>
                 </figure>
             </div>
         </div>
