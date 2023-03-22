@@ -641,10 +641,60 @@
     
         <hr style="width: 75%;">
 
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Learning Effective Road Network Representation with Hierarchical Graph Neural Networks </p>
+                <p class="fw-light lh-1"> SIGKDD 2020</p>
+                <span class="badge bg-success">Representation Learning</span>
+                <span class="badge bg-secondary">GNN</span>
+                <span class="badge bg-info text-dark">Embedding</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The author proposes a framework to model the road network at the road segments, structural regions and functional zones levels using GNN. 
+                    The paper considers road segments as vertices, and uses road segment ID, road type, lane number, segment length and longitude with latitude as features.
+                    The features are discrete and continuous features are divided into consecutive bins.
+                    To form region nodes from road segments, the model first conducts hard binary mapping using spectral clustering: it runs standard K-means algorithms on eigenvectors of the graph Laplacian for road segment adjacent matrix. 
+                    Moreover, a GAT is used to calculate segment importance scores for different clusters. 
+                    The hard mapping and importance score are multiplied as weighted scores to determine the soft assignment matrix of road segments to structural regions. 
+                    The weighted scores are both used to get the region representation and the adjacent matrix of region. 
+                    The assignment matrix is trained by reconstruction of road network with the approximated segment representation. 
+                    The process is similar for constructing functional zones from structural regions. 
+                    The assignment matrix is the normalization of scores from another GAT. 
+                    The zone representation is the linear combination of region representations. 
+                    The weighted adjacency matrix for zones is computed from representation matrix.
+                    The difference is that real trajectory data are used for structure information. 
+                    The trajectories are changed to the road segment transition matrix: the frequency one segment reaches another segment with a step length in all trajectory sequences. 
+                    The updated connectivity matrix is the past adjacent matrix plus the transition matrix. 
+                    The reconstruction task is similar,  but the MSE loss is used to measure the difference. 
+                    After that, the model fixes two assignment matrices and updates node representations. 
+                    First, it performs zone level update via a standard GCN. 
+                    Then it updates region level similarly via another GCN. 
+                    Finally update segment level via a GAT (as the adjacency matrix is binary). 
+                    As for the experiment, the road network is based on OpenStreetMap, and the trajectories from three cities are mapped to road segments from the GPS logs. 
+                    The performance is analyzed from four traffic-related applications using simple standard neural network architectures: next-location prediction, label classification of road segments, destination prediction and route planning.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    The paper proposed a novel framework for the urban hierarchical structure. 
+                    The definition of structural regions and functional zones are well organized. 
+                    The core part is the reconstruction task for training the needed assignment matrices. 
+                    Different types of neural networks and loss functions are carefully chosen to fit the purpose. 
+                    However, in my opinion, the feature selections for road segments may not be effective as features like ID and coordinates are not informative for the proposed tasks. 
+                    In addition, the signal for reconstruction task may need more consideration. 
+                    There is no doubt that it closely relates to the graph structure, but it is not clear whether the signal can reflect the success of the reconstruction task. 
+                    It also remained unexplained in the calculation of weighted adjacency matrices from the representation matrices.      
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
         <div class="row py-1 justify-content-center">
             <div class="col-9">
                 <figure class="text-end">
-                      <p class="fw-light lh-1">Last updated: May 6, 2022</p>
+                      <p class="fw-light lh-1">Last updated: March 22, 2023</p>
                 </figure>
             </div>
         </div>
