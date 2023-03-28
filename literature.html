@@ -645,7 +645,7 @@
             <div class="col-9">
                 <p class="fs-3 fw-normal"> Learning Effective Road Network Representation with Hierarchical Graph Neural Networks </p>
                 <p class="fw-light lh-1"> SIGKDD 2020</p>
-                <span class="badge bg-success">Representation Learning</span>
+                <span class="badge bg-success">Hierarchical Representation Learning</span>
                 <span class="badge bg-secondary">GNN</span>
                 <span class="badge bg-info text-dark">Embedding</span>
 
@@ -691,10 +691,62 @@
     
         <hr style="width: 75%;">
 
+        <div class="row py-5 justify-content-center">
+            <div class="col-9">
+                <p class="fs-3 fw-normal"> Learning Urban Region Representations with POIs and Hierarchical Graph Infomax </p>
+                <p class="fw-light lh-1"> ISPRS 2023</p>
+                <span class="badge bg-success">Hierarchical Representation Learning</span>
+                <span class="badge bg-secondary">GCN</span>
+                <span class="badge bg-primary">POIs</span>
+                <span class="badge bg-info text-dark">Embedding</span>
+
+                <br></br>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    This paper proposes an unsupervised learning model for embeddings of POIs on POI-region-city hierarchies. 
+                    The author adopts POI categories on second-level (e.g., supermarket, mall and grocery). 
+                    First, graph on POI level is constructed using Delaunay triangulation. 
+                    Each edge is assigned with an unnormalized weight depending on the spatial distance and whether within in the same region. 
+                    The category embeddings are grasped using a random walk model to consider co-occurrence and distance decay. 
+                    Laplacian Eigenmaps is also applied to enforce the second level categories with the same first-level to be the adjacent in the embedding space. 
+                    Then, a one-layer GCN encoder is applied on category embeddings to generate unique single POI embeddings. 
+                    Second, the region graph is constructed based on adjacency relations. 
+                    The POI embeddings are aggregated to region level using multi-head attention inspired by set transformer. 
+                    Then, region embeddings are passed to another one-layer GCN. 
+                    Third, region embeddings are aggregated to the city level using area-weighted sum pooling with a sigmoid function. 
+                    Maximization of mutual information is the essence for unsupervised learning in this paper.
+                    Negative sampling (contrastive learning) is performed at both POI and regional levels. 
+                    For a region, maximize the mutual information between the region embedding and POI embedding within the region. 
+                    The negative samples are POI embeddings in another region. 
+                    Specifically, the paper uses a hard negative sampling. 
+                    First, the author represents each POI as the concatenation of its first and second category and use average for a rough region embedding. 
+                    The negative samples are selected from regions that have a certain cosine similarity with the target region rough embedding. 
+                    For a city, region embeddings are positive samples, while the negative samples come from row-wise shuffling of the POI graph feature matrix (corrupted graphs). 
+                    Accordingly, the loss function contains two parts: POI-region and region-city. 
+                    As for the experiment, there are 22 first-level and ~170 second-level categories for POI. 
+                    Dimension of the POI category embedding is set as 64. 
+                    Traffic analysis zones from road network are seen as regions. 
+                    Three downstream tasks are designed, which are predictions of urban function, population density and housing price. 
+                    The regression task is analyzed by a random forest model using RMSE, MAE and correlation coefficient, while the classification task is analyzed by simple MLP using L1 distance, KL divergence and cosine similarity.
+                </p>
+
+                <p class="text-body fw-light lh-3" style="text-align: justify">
+                    In all, the idea of the unsupervised learning is fascinating, as the quality of real-time data influences a lot in the supervised learning custom. 
+                    The unified POI categorical information and unique single POI information are captured together in the proposed model. 
+                    Moreover, embeddings crossing the level are dealt differently for POI-region and region-city. 
+                    However, the hierarchical relation is considered by two disjointed graphs, which are connected by embeddings. 
+                    It may fail to capture conjugate relationship if two parts are trained separately. 
+                    In addition, the hard negative sample part and negative samples for region level may need more explanation to prove their effectiveness.
+                </p>
+            </div>
+        </div>
+    
+        <hr style="width: 75%;">
+
         <div class="row py-1 justify-content-center">
             <div class="col-9">
                 <figure class="text-end">
-                      <p class="fw-light lh-1">Last updated: March 22, 2023</p>
+                      <p class="fw-light lh-1">Last updated: March 28, 2023</p>
                 </figure>
             </div>
         </div>
